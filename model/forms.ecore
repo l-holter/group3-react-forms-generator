@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="forms" nsURI="platform:/resource/group3-react-forms-generator/model/forms.ecore"
+    nsPrefix="forms">
+  <eClassifiers xsi:type="ecore:EClass" name="FormGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subtitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formElement" upperBound="-1"
+        eType="#//FormElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//FormElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="for" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Form">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formElement" upperBound="-1"
+        eType="#//FormElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formGroup" upperBound="-1"
+        eType="#//FormGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//FormElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//InputType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InputType">
+    <eLiterals name="TEXT"/>
+    <eLiterals name="BUTTON" value="1"/>
+    <eLiterals name="CHECKBOX" value="2"/>
+    <eLiterals name="COLOR" value="3"/>
+    <eLiterals name="DATE" value="4"/>
+    <eLiterals name="DATETIMELOCAL" value="5"/>
+    <eLiterals name="EMAIL" value="6"/>
+    <eLiterals name="FILE" value="7"/>
+    <eLiterals name="HIDDEN" value="8"/>
+    <eLiterals name="IMAGE" value="9"/>
+    <eLiterals name="MONTH" value="10"/>
+    <eLiterals name="NUMBER" value="11"/>
+    <eLiterals name="PASSWORD" value="12"/>
+    <eLiterals name="RADIO" value="13"/>
+    <eLiterals name="RANGE" value="14"/>
+    <eLiterals name="RESET" value="15"/>
+    <eLiterals name="SEARCH" value="16"/>
+    <eLiterals name="SUBMIT" value="17"/>
+    <eLiterals name="TEL" value="18"/>
+    <eLiterals name="TIME" value="19"/>
+    <eLiterals name="URL" value="20"/>
+    <eLiterals name="WEEK" value="21"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextArea" eSuperTypes="#//FormElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cols" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Select" eSuperTypes="#//FormElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" upperBound="-1"
+        eType="#//Option" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optionGroup" upperBound="-1"
+        eType="#//OptionGroup" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Option">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//FormElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buttonText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataList" eSuperTypes="#//FormElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" upperBound="-1"
+        eType="#//Option" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" upperBound="-1"
+        eType="#//Option" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

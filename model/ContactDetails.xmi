@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms:Form
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:forms="platform:/resource/group3-react-forms-generator/model/forms.ecore"
+    name="contactDetails"
+    title="Please input your contact details">
+  <formElement
+      xsi:type="forms:Button"
+      buttonText="Submit">
+    <attribute
+        key="onclick"
+        value="console.log(&quot;Form submitted&quot;)"/>
+  </formElement>
+  <formGroup
+      name="credentials"
+      subtitle="Username and password">
+    <formElement
+        xsi:type="forms:Input"/>
+    <formElement
+        xsi:type="forms:Input"
+        type="PASSWORD"/>
+  </formGroup>
+  <formGroup
+      name="otherInformation"
+      subtitle="">
+    <formElement
+        xsi:type="forms:TextArea"
+        name="feedback"
+        rows="20"
+        cols="20"/>
+    <formElement
+        xsi:type="forms:Select"
+        name="favoriteCar">
+      <option
+          value="vwGolf"
+          content="VW Golf"
+          selected="true"/>
+      <optionGroup
+          label="BMW">
+        <option
+            value="x3"
+            content="x3"/>
+        <option
+            value="x5"
+            content="x5"/>
+      </optionGroup>
+    </formElement>
+  </formGroup>
+  <formGroup
+      name="favoriteColor">
+    <formElement
+        xsi:type="forms:Input"/>
+    <formElement
+        xsi:type="forms:DataList">
+      <option
+          value="blue"
+          content="Blue"
+          selected="true"/>
+      <option
+          value="orange"
+          content="Orange"
+          selected="true"/>
+      <option
+          value="red"
+          content="Red"
+          selected="true"/>
+    </formElement>
+  </formGroup>
+</forms:Form>
