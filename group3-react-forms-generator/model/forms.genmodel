@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/group3-react-forms-generator/src" modelPluginID="group3-react-forms-generator"
+    modelName="Forms" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>forms.ecore</foreignModel>
+  <genPackages prefix="Forms" disposableProviderFactory="true" ecorePackage="forms.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="forms.ecore#//InputType">
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/TEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/BUTTON"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/CHECKBOX"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/COLOR"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/DATETIMELOCAL"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/EMAIL"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/FILE"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/HIDDEN"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/IMAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/MONTH"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/NUMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/PASSWORD"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/RADIO"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/RANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/RESET"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/SEARCH"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/SUBMIT"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/TEL"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/TIME"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/URL"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//InputType/WEEK"/>
+    </genEnums>
+    <genClasses ecoreClass="forms.ecore#//FormGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//FormGroup/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//FormGroup/subtitle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//FormGroup/formElement"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Label/for"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Form">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Form/formElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Form/formGroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/title"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="forms.ecore#//FormElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//FormElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//FormElement/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//FormElement/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Input/type"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Attribute/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Attribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//TextArea">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//TextArea/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//TextArea/rows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//TextArea/cols"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Select">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Select/option"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Select/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Select/multiple"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Select/optionGroup"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Option">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Option/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Option/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Option/selected"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Button">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Button/buttonText"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//DataList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//DataList/option"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//OptionGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//OptionGroup/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//OptionGroup/option"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

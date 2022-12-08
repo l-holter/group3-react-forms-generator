@@ -1,0 +1,8 @@
+class contactDetails extends React.Component {
+    render() {
+        return <>
+            <h1>Please input your contact details</h1>
+        </>
+    }
+}
+

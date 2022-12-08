@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Place this file in the target project and call it with "External Tools > Run As > Ant Build" -->
+<!-- You have to change the MODEL and the TARGET values -->
+
+<project basedir="." default="FormSample" name="group3.react.forms.generator.acceleoSample">
+	<import file="../../group3.react.forms.generator.acceleo/tasks/Form.xml"/>
+
+    <!-- Change the values of MODEL and TARGET to point to your model and output folder -->
+	<property name="MODEL" value="${basedir}/model/file.xmi"/>
+	<property name="TARGET" value="${basedir}/src-gen"/>
+
+	<target name="FormSample" description="Generate files in 'TARGET'">
+		<antcall target="Form" >
+			<param name="model" value="${MODEL}"/>
+			<param name="target" value="${TARGET}"/>
+		</antcall>
+	</target>
+</project>

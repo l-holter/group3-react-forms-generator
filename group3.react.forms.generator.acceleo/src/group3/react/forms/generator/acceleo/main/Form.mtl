@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[module Form('platform:/resource/group3-react-forms-generator/model/forms.ecore')]
+
+
+[template public Form(form : Form)]
+[comment @main/]
+[file (form.name.concat('.txt'), false, 'UTF-8')]
+class [form.name/] extends React.Component {
+    render() {
+        return <>
+            <h1>[form.title/]</h1>
+        </>
+    }
+}
+
+[/file]
+[/template]
+
+[template public generateReactFunction(form: Form)]
+        function [form.name/]()
+[/template]
