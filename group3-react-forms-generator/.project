@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>group3-react-forms-generator</name>
+	<name>group3.react.forms.generator</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -26,4 +26,3 @@
 		<nature>org.eclipse.pde.PluginNature</nature>
 	</natures>
 </projectDescription>
-
